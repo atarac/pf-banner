@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/pf-banner",
+	"version": "1.0.0",
+	"title": "Pf Banner",
+	"category": "text",
+	"icon": "sticky",
+	"description": "Create a fixed banner.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
+		"linkUrl": {
+			"type": "string",
+			"default":""
+		},
+		"imgUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imgWidth": {
+			"type": "string",
+			"default": "200px"
+		},
+		"imgHeight": {
+			"type": "string",
+			"default": "200px"
+		},
+		"bannerPosBottom": {
+			"type": "string",
+			"default": "0px"
+		},
+		"bannerPosRight": {
+			"type": "string",
+			"default": "50%"
+		},
+		"isImgVisible": {
+			"type": "boolean",
+			"default": "true"
+		}
+	},
+	"textdomain": "pf-banner",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

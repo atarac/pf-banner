@@ -1,0 +1,30 @@
+.wp-block-create-block-pf-banner {
+	border: 1px dotted #777;
+}
+
+.banner-position {
+	.is-img-visible {
+		color: #777;
+		padding: 0;
+		&:hover {
+			color: #333;
+		}
+		&:focus:not(:disabled) {
+			box-shadow: none;
+		}
+	}
+}
+
+.banner-img {
+	object-fit: cover;
+}
+
+.mb24 {
+	margin-bottom: 24px;
+}
+
+.invisible-button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
