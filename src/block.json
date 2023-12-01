@@ -38,7 +38,7 @@
 		},
 		"bannerPosRight": {
 			"type": "string",
-			"default": "50%"
+			"default": ""
 		},
 		"isImgVisible": {
 			"type": "boolean",

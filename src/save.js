@@ -13,6 +13,7 @@ export default function save({ attributes }) {
 	} = attributes;
 
 	const bannerPosition = {
+		zIndex: 1000,
 		position: 'fixed',
 		bottom: bannerPosBottom,
 		right: bannerPosRight,

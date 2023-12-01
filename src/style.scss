@@ -13,6 +13,9 @@
 			box-shadow: none;
 		}
 	}
+	.is-img-unvisible {
+		margin-bottom: 26px;
+	}
 }
 
 .banner-img {
@@ -27,4 +30,5 @@
 	background: transparent;
 	border: none;
 	cursor: pointer;
+	padding: 0;
 }

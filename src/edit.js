@@ -15,6 +15,7 @@ export default function Edit({ attributes, setAttributes }) {
 	} = attributes;
 
 	const bannerPosition = {
+		zIndex: 1000,
 		position: 'fixed',
 		bottom: bannerPosBottom,
 		right: bannerPosRight,
@@ -23,6 +24,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const bannerStyle = {
 		width: imgWidth,
 		height: imgHeight,
+		marginBottom: 26,
 	};
 
 	const imgStyle = {
@@ -48,14 +50,16 @@ export default function Edit({ attributes, setAttributes }) {
 				<div { ...blockprops }>
 					<InspectorControls>
 						<PanelBody title="バナーの基本設定">
-							<MediaUpload
-								onSelect={ (media) => setAttributes({ imgUrl: media.url }) }
-								allowedTypes={ ['image'] }
-								value={ imgUrl }
-								render={ ({ open }) => (
-									<Button onClick={ open } className="is-secondary mb24">バナー画像を選択する</Button>
-								)}
-							/>
+							{ imgUrl &&
+								<MediaUpload
+									onSelect={ (media) => setAttributes({ imgUrl: media.url }) }
+									allowedTypes={ ['image'] }
+									value={ imgUrl }
+									render={ ({ open }) => (
+										<Button onClick={ open } className="is-secondary mb24">バナー画像を変更する</Button>
+									)}
+								/>
+							}
 							<TextareaControl
 								label="リンクURL"
 								value={ linkUrl }
@@ -83,9 +87,21 @@ export default function Edit({ attributes, setAttributes }) {
 							/>
 						</PanelBody>
 					</InspectorControls>
-							<a href={ linkUrl }>
-								{ imgUrl && <img class="banner-img" src={ imgUrl } alt={ imgAlt } style={ imgStyle }/> }
-							</a>
+					{ !imgUrl &&
+						<MediaUpload
+							onSelect={ (media) => setAttributes({ imgUrl: media.url }) }
+							allowedTypes={ ['image'] }
+							value={ imgUrl }
+							render={ ({ open }) => (
+								<div class="content-center" style={{ height: imgHeight }}>
+									<Button onClick={ open } className="is-secondary">バナー画像を選択する</Button>
+								</div>
+							)}
+						/>
+					}
+					<a href={ linkUrl }>
+						{ imgUrl && <img class="banner-img" src={ imgUrl } alt={ imgAlt } style={ imgStyle }/> }
+					</a>
 				</div>
 			}
 		</div>
