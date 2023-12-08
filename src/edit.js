@@ -56,7 +56,15 @@ export default function Edit({ attributes, setAttributes }) {
 									allowedTypes={ ['image'] }
 									value={ imgUrl }
 									render={ ({ open }) => (
-										<Button onClick={ open } className="is-secondary mb24">バナー画像を変更する</Button>
+										<Button
+											onClick={ open }
+											className="is-secondary"
+											style={{
+												marginBottom: '24px'
+											}}
+										>
+											バナー画像を変更する
+										</Button>
 									)}
 								/>
 							}
@@ -65,6 +73,15 @@ export default function Edit({ attributes, setAttributes }) {
 								value={ linkUrl }
 								onChange={ (newLinkUrl) => setAttributes({ linkUrl: newLinkUrl }) }
 							/>
+							<Button
+								onClick={ () => window.open(linkUrl, 'blank') }
+								className="is-link"
+								style={{
+									marginBottom: '24px'
+								}}
+							>
+								リンクを確認する
+							</Button>
 							<TextControl
 								label="幅"
 								value={ imgWidth }
@@ -99,7 +116,7 @@ export default function Edit({ attributes, setAttributes }) {
 							)}
 						/>
 					}
-					<a href={ linkUrl }>
+					<a>
 						{ imgUrl && <img class="banner-img" src={ imgUrl } alt={ imgAlt } style={ imgStyle }/> }
 					</a>
 				</div>

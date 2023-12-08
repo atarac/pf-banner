@@ -1,4 +1,12 @@
 .banner-position {
+	.is-img-visible {
+		padding: 0;
+		height: auto;
+		color: #777;
+		&:hover {
+			color: #333;
+		}
+	}
 	.is-img-unvisible {
 		margin-bottom: 26px;
 	}

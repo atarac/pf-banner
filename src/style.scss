@@ -2,28 +2,8 @@
 	border: 1px dotted #777;
 }
 
-.banner-position {
-	.is-img-visible {
-		color: #777;
-		padding: 0;
-		&:hover {
-			color: #333;
-		}
-		&:focus:not(:disabled) {
-			box-shadow: none;
-		}
-	}
-	.is-img-unvisible {
-		margin-bottom: 26px;
-	}
-}
-
 .banner-img {
 	object-fit: cover;
-}
-
-.mb24 {
-	margin-bottom: 24px;
 }
 
 .invisible-button {
@@ -31,4 +11,10 @@
 	border: none;
 	cursor: pointer;
 	padding: 0;
+	span {
+		color: #777;
+		&:hover {
+			color: #333;
+		}
+	}
 }
